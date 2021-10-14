@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+#map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 50%;  /* The width is the width of the web page */
+       }
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  border-radius: 5px;
+
+}
+
+
+ </style>
+   
+</head>
+
+<body onload= "initMap()">
+    <div id = "wrapper" >
+        <div id="map" style = "float:left; width:80; height=100"> </div>
+
+          <div class="container">
+  <div style="text-align:center">
+    <h2>About Us</h2>
+    </div>
+
+  <div class="row">
+    <div class="column">
+      </div>
+
+    <div class="column">
+     <p>E-Tribal is works on four basic principles customer obsession rather than completetiveness,passion for new inventions,commiment to operational excellence and longterm thinking.<p>
+       
+       
+         
+    </div>
+  </div>
+</div>
+
+   
+   
+   
+    <script>
+          var map = L.map('map').setView([20.5937,78.9629],5);
+                L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=QZvIkf6eqqBYP9s0CC9e',{attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+}).addTo(map);
+var marker = L.marker([20.5937,78.9629]).addTo(map);
+var marker = L.marker([18.9894, 73.1175]).addTo(map);                
+var marker = L.marker([19.0330,73.0297]).addTo(map);
+var marker = L.marker([19.2215, 73.1645]).addTo(map);
+var marker = L.marker([19.2403, 73.1305]).addTo(map);
+var marker = L.marker([19.2952, 72.8544]).addTo(map);
+var marker = L.marker([19.1668, 73.2368]).addTo(map);
+var marker = L.marker([19.2813, 73.0483]).addTo(map);
+var marker = L.marker([19.3919,72.8397]).addTo(map);
+var marker = L.marker([19.0760,72.8777]).addTo(map);
+
+
+var circle = L.circle([18.9894, 73.1175], { color: 'red', fillColor: '#f03', fillOpacity: 0.5, radius: 500 }).addTo(map);
+
+var circle = L.circle([19.0330,73.0297], { color: 'red', fillColor: '#f03', fillOpacity: 0.5, radius: 500 }).addTo(map);
+
+
+
+
+marker.bindPopup("<b>Tribal Market</b><br> find us here.").openPopup();
+circle.bindPopup("I am a circle.");
+
+    </script>
+</div><br><br>
+
+<div style="text-align:center"> 
+  <button onclick="playPause()"> PLAY / PAUSE </button> 
+  <button onclick="openFullscreen()"> FULL SCREEN </button>
+  
+  <br><br>
+  <video id="myvideo" width="420">
+    <source src="login.mp4" type="video/mp4">
+  </video>
+</div>
+ 
+<script>
+var elem = document.getElementById("myvideo");
+function playPause() 
+{ 
+  if (myvideo.paused) 
+    myvideo.play(); 
+  else 
+    myvideo.pause(); 
+} 
+function openFullscreen() 
+{
+  if (elem.requestFullscreen) 
+  {
+    elem.requestFullscreen();
+  } 
+  else if (elem.mozRequestFullScreen) 
+  { /* Firefox */
+    elem.mozRequestFullScreen();
+  } 
+  else if (elem.webkitRequestFullscreen)
+   { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } 
+  else if (elem.msRequestFullscreen) 
+  { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
+</body>
+</html>
